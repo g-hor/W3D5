@@ -20,9 +20,10 @@ class PolyTreeNode
 
   def parent=(par)
     @parent = par
-    if par != nil
-      par.children << self
-    end
+    #if par != nil
+    #  par.children << self if !par.children.include?(self)
+    #end
+	par.children << self if !par.children.include?(self) unless par == nil
   end
 
 end
