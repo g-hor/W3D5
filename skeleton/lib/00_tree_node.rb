@@ -52,7 +52,16 @@ class PolyTreeNode
     return nil
   end
 
+  def bfs(targ_value)
+	return self if self.value == targ_value
+	queue = [self]
 
+	if 
+		queue.each do |node|
+			node.children.each 
+		end
+	
+  end
 
 
 
