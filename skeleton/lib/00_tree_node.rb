@@ -40,9 +40,23 @@ class PolyTreeNode
   end
 
   def dfs(targ)
-	
+    stack = self
+    return stack if stack == targ
 
+    if stack != targ
+      children.each do |node|
+        stack = node
+        return dfs(targ)
+      end
+    end
+
+    return nil
   end
+
+
+
+
+
 
   def inspect
     "Value: #{self.value} | Children: #{self.children}"
