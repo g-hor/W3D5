@@ -19,11 +19,19 @@ class PolyTreeNode
   end
 
   def parent=(par)
+    if parent != nil
+      #remove self from parent
+      parent.children.delete(self)
+    end
     @parent = par
     #if par != nil
     #  par.children << self if !par.children.include?(self)
     #end
-	par.children << self if !par.children.include?(self) unless par == nil
+	  par.children << self if !par.children.include?(self) unless par == nil
+  end
+
+  def inspect
+    "Value: #{self.value} | Children: #{self.children}"
   end
 
 end
