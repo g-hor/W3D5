@@ -43,12 +43,12 @@ class PolyTreeNode
     stack = self
     return stack if stack == targ
 
-    if stack != targ
-      children.each do |node|
-        stack = node
-        return dfs(targ)
-      end
-    end
+	self.children.each do |child|
+		stack = child
+		search_result = stack.dfs(targ)
+		#stack = child if search_result == targ
+		return search_result if search_result != nil
+	end
 
     return nil
   end
