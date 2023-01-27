@@ -44,7 +44,6 @@ class PolyTreeNode
 
     self.children.each do |child|
       search_result = child.dfs(targ)
-      #stack = child if search_result == targ
       return search_result if search_result != nil
     end
 
