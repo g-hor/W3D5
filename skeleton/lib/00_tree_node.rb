@@ -30,6 +30,20 @@ class PolyTreeNode
 	  par.children << self if !par.children.include?(self) unless par == nil
   end
 
+  def add_child(c_node)
+	c_node.parent = self
+  end
+
+  def remove_child(c_node)
+	raise "You're not my child!" unless children.include?(c_node)
+	c_node.parent = nil 
+  end
+
+  def dfs(targ)
+	
+
+  end
+
   def inspect
     "Value: #{self.value} | Children: #{self.children}"
   end
